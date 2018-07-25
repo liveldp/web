@@ -1,0 +1,363 @@
+/* Dynamic Responsive Table */
+#settingsBox {
+    /*overflow-y: auto;*/
+    font-family: Roboto;
+}
+#formContainer {
+    text-align: center;
+    z-index: 10;
+}
+#myList {
+    width: 80%;
+    display: inline-block;
+    padding-top: 20px;
+}
+#controlsContainer {
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    color: #FFF;
+    height: 50px;
+    font-size: 22px;
+    margin-top: -2px;
+    margin-bottom: 30px;
+    padding: 9px;
+}
+#submitButton {
+    width: 200px;
+    display: inline-flex;
+}
+.ui-page.ui-page-theme-a.ui-page-active {
+    background: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+a.list-group-item.active, a.list-group-item {
+    text-align: center;
+    padding-top: 0px;
+    padding-bottom: 0;
+    margin-top: 4px;
+    border: none;
+    box-shadow: 0px 0px 1px 2px #282828;
+    background-color: #282828;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.list-group-item-heading {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 15px;
+	color: #FFF !important;
+	text-decoration: none !important;
+	text-shadow: 2px 2px #1F026D;
+	text-align: center;
+}
+
+a.list-group-item:focus {
+    background: #616161 !important;
+	color: #555 !important;
+}
+
+a.list-group-item:hover {
+    color: #555;
+    background-color: #616161 !important;
+}
+
+a.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.active:hover {
+	z-index: 2;
+	color: #fff;
+    background-color: #616161;
+    border-color: #282828;
+}
+
+.list-group-item .rowData {
+    background: #FDFDFD;
+    border-radius: 5px;
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: margin-bottom 1s, max-height 1s;
+	-moz-transition: margin-bottom 1s, max-height 1s;
+	-o-transition: margin-bottom 1s, max-height 1s;
+	transition: margin-bottom 1s, max-height 1s;
+}
+
+.list-group-item.active .rowData {
+	max-height: 1440px;
+	margin-bottom: 15px;
+}
+
+
+.flex-container {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.form_flex-item {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    min-width: 200px;
+    cursor: context-menu;
+    padding: 10px 0px 10px 0px;
+}
+
+.form_flex-item img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.checkIco {
+	z-index: -1;
+    color: #c0c0c0;
+    position: absolute;
+    font-size: 2em;
+    opacity: 0.5;
+}
+
+.list-group-item.active .checkIco {
+	-webkit-transition: opacity 0.7s;
+	-moz-transition: opacity 0.7s;
+	-o-transition: opacity 0.7s;
+	transition: opacity 0.7s;
+}
+
+.list-group-item .form_flex-item .checkIco {
+    z-index: -1;
+    opacity: 0;
+	-webkit-transition: opacity 1.2s;
+	-moz-transition: opacity 1.2s;
+	-o-transition: opacity 1.2s;
+	transition: opacity 1.2s;
+}
+
+.list-group-item.active .form_flex-item .checkIco {
+    z-index: 5 !important;
+    opacity: 0.5;
+}
+
+.list-group-item.active .form_flex-item.selected .checkIco {
+	color: #080;
+    opacity: 1;
+}
+
+.ui-btn.ui-input-btn.ui-corner-all.ui-shadow {
+    width: 173px;
+    display: inline-flex;
+}
+
+/* Form Map & Google Street Viewer */
+#streetViewContainer {
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+    text-align: center;
+    max-height: 50px;
+}
+#streetViewContainer.open {
+    max-height: 550px;
+}
+#streetViewContainer.open #streetMap {
+    opacity: 1;
+}
+#streetMap {
+    width: 80%;
+    height: 400px;
+    display: inline-flex;
+    opacity: 0;
+    box-shadow: 0px 1px 2px 1px #282828;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+#formMapContainer {
+    text-align: center;
+    padding-top: 20px;
+    max-height: 74px;
+    -webkit-transition: max-height 1s;
+    -moz-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    transition: max-height 1s;
+}
+#streetViewContainer.open #croshair {
+    height: 64px;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    margin-top: -32px;
+    margin-left: -32px;
+    pointer-events: none;
+    z-index: 15;
+    background-image: url('../img/crosshair.png');
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inherit;
+    opacity: 1;
+}
+#croshair {
+    display: none;
+    opacity: 0;
+}
+#formMapContainer.open {
+    max-height: 580px;
+}
+#formMapContainer.open #formMap, #formMapContainer.open #dragableMarker, #formMapContainer.open #markers, #formMapContainer.open #alloc{
+    opacity: 1;
+}
+#formMap, #dragableMarker, #markers {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+#formMap {
+    width: 80%;
+    height: 400px;
+    display: inline-flex;
+    opacity: 0;
+    box-shadow: 0px 1px 2px 1px #282828;
+}
+#dragableMarker {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    opacity: 0;
+    cursor: pointer;
+}
+#markerContainer {
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+    box-shadow: 0px 1px 2px 1px #282828;
+    padding: 6px;
+    height: 50px;
+    background: #FFF;
+}
+#markers {
+    position: absolute;
+    top: 82px;
+    width: 32px;
+    height: 32px;
+    left: 11%;
+    opacity: 0;
+    z-index: 10;
+}
+#alloc {
+    min-width: 193px;
+    opacity: 0;
+    color: #282828;
+    font-size: 19px;
+    left: 60px;
+    display: inline-block;
+    top: 6px;
+}
+#mapheader, #streetheader {
+    z-index: 10;
+    height: 50px;
+    color: #FFF;
+    font-size: 26px;
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0px 0px 1px 2px #282828;
+    background-color: #282828;
+    cursor: context-menu;
+}
+#mapheader:hover, #streetheader:hover {
+    color: #FFF;
+    background-color: #616161;
+}
+.headertitle {
+    vertical-align: middle;
+}
+.headericonleft {
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #FFF;
+    vertical-align: middle;
+    margin: 0px 20px 0px 0px;
+}
+
+.headericonright {
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #FFF;
+    margin: 0px 0px 0px 20px;
+    vertical-align: middle;
+}
+#mapheader #mapttogleico {
+    font-family: FontAwesome;
+    float: right;
+    top: 10px;
+    right: 10px;
+}
+#markers.hidden, #markerContainer.hidden #alloc, #markerContainer.hidden {
+    display:none;
+}
+#streetheader #streettogleico {
+    font-family: FontAwesome;
+    float: right;
+    top: 10px;
+    right: 10px;
+}
+
+/* Material Design button */
+.formbutton {
+    display: inline-block;
+    position: relative;
+    line-height: 32px;
+    border-radius: 2px;
+    font-size: 0.9em;
+    background-color: #282828;
+    color: #fff;
+    cursor: pointer;
+}
+.formbutton.raised:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+.formbutton.raised {
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.formbutton.raised:active {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    transition-delay: 0s;
+}
+.formbutton > paper-ripple {
+    border-radius: 2px;
+    overflow: hidden;
+}
